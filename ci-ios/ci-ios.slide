@@ -1,10 +1,14 @@
-Continuous integration with iOS 
-Because we can.
+Workshop: Continuous integration 
+With iOS mobile development
+
+24 October 2017
+Tags: continuous, integration, testing, ios, mobile, development, xcode9
 
 Iain Munro
-github.com/iain17
-@iain1711
+Freelance Software Engineer, PocketMedia
 iain@imunro.nl
+http://iMunro.nl/
+@iain1711
 
 * Notes
 
@@ -45,7 +49,7 @@ What you'll learn today:
 
 * What are the down sides?
 - It has a setup cost, setting up the build automation, creating automated tests.
-- You’ll want to adopt a few best practices: code reviews, git flow, unit test, design patters.
+- You’ll want to adopt a few best practices: code reviews, git flow, unit test, design patterns (dependency injection, mocking etc...).
 - If your code hasn't got tests your code WILL change!
 - At first it will slow down the team while the team figures out how to best adopt those practices.
 
@@ -98,15 +102,14 @@ Now, we will see that in action how easy to setup and use Xcode Server.
 Note: Since it's techically a workshop, try and follow along on your on laptop. If you get stuck, I'll help you after the precsentation/workshop :-)
 
 * Disadvantages
-- No badges :-(
+- No badges :-(. Perhaps fixable with an external third party service.
 - You have to run a OSX server. Right now I haven't found a (free) service that'll do it out of the box.
 - Callback to Git. Doesn't show in PRs like TravisCI or Bitrise.
 - No option to upload the IPA to iTunes Connect or TestFlight (CD).
-- What would you be missing?
 
 * Next steps after CI
 
-All great things have small beginnings ~ Peter Senge
+.caption _All great things have small beginnings._ by Peter Senge
 
 Start Continuous deployment then go into automating everything!
 Including but not limited to: Continuous Deployment!
