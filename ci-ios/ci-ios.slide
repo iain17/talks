@@ -1,0 +1,124 @@
+Continuous integration with iOS 
+Because we can.
+
+Iain Munro
+github.com/iain17
+@iain1711
+iain@imunro.nl
+
+* Notes
+
+The slides are available on [[https://github.com/iain17/talks/ci-ios.slide]]
+
+* Agenda
+
+What you'll learn today:
+
+- What is Continuous Integration? & Why Use it?
+- What are the down sides?
+- How do you go about adopting continuous integration?
+- How to deal with broken builds
+- Metrics in Continuous Integration
+- CI Before Xcode 9
+- CI After Xcode 9
+- (DEMO): Xcode9 + Xcode Server
+- Next steps after CI
+
+* What is Continuous Integration?
+
+* Continuous Integration
+
+.image ci-diagram.png 550 _
+
+* Why would you use it?
+
+- Prerequisite: Unit test, integration test and UI test.
+- Prerequisite: You make use of version control systems like GIT.
+- You want ensurance that features keep working or you'll get notified.
+- You want to reduce review times (PRs).
+- You want to automate your testing process.
+- You (might) want to eventually automate your (dev, release) deployment.
+- You want to increase trust within the team and code quality.
+- You want fewer bugs in production and a faster overal release cycle.
+- You want to increase app quality and catch bugs sooner.
+#Which will all result in a higher quality app for your user, and most likely better reviews.
+
+* What are the down sides?
+- It has a setup cost, setting up the build automation, creating automated tests.
+- You’ll want to adopt a few best practices: code reviews, git flow, unit test, design patters.
+- If your code hasn't got tests your code WILL change!
+- At first it will slow down the team while the team figures out how to best adopt those practices.
+
+#Yes, like everything there is a cost to continuous integration, but honestly you will recover that cost very quickly.
+#You should see fewer regression, fewer bugs that go into production, a faster overall release cycle.
+
+* How do you go about adopting continuous integration?
+You’ll want to adopt a few best practices:
+- Branch management system: I like gitflow, i’m sure there are others, pick one that works for you.
+- Pull request and build on pull request: Have at least 2 people review pull requests on top of the CI test report.
+.image github-ci.png
+
+* How to deal with broken builds
+.image bitrise-failure.png 400 _
+.image travis-failure.png 100 _
+
+* Metrics in Continuous Integration
+.image badges.png
+.image coverage-chart.png 300 _
+
+* CI Before Xcode 9
+
+- Bitrise.io - Free for 200 builds a month. Can even grow to be a CD.
+- Buddybuild - Haven't tried it yet. Has a free plan.
+- Jenkins - Self hosting. Find a Mac server.
+- Circleci - $39 starter plan.
+- Nevercode - $49 starter plan.
+- Fastlane - Haven't tried this yet. Very popular though.
+- Travis - Free. But hopelessly crowded, slow for OSX builds and had countless problems.
+And many more...
+
+* CI After Xcode 9
+.image wwdc2017-xcode-server.png 400 _
+A screenshot taken from WWDC 2017 that made most iOS developers smile :-)
+[[https://developer.apple.com/videos/play/wwdc2017/403/]]
+
+* What's cool about it
+
+In Xcode 9, we have following new CI related features integrated within Xcode:
+
+- Xcode Server is inbuilt with Xcode 9 so no need to have separate macOS app.
+- Xcode Server bot has new tabs for code signing and parallel testing on multiple devices and simulators with automatic provisioning of devices.
+- Automatically signing of both development and distribution signing.
+- Xcode Server creates distribution IPA with automated or manual signing
+- Xcode Sever do not launch simulator anymore still able to run in parallel.
+
+* Demo time!
+Now, we will see that in action how easy to setup and use Xcode Server.
+
+Note: Since it's techically a workshop, try and follow along on your on laptop. If you get stuck, I'll help you after the precsentation/workshop :-)
+
+* Disadvantages
+- No badges :-(
+- You have to run a OSX server. Right now I haven't found a (free) service that'll do it out of the box.
+- Callback to Git. Doesn't show in PRs like TravisCI or Bitrise.
+- No option to upload the IPA to iTunes Connect or TestFlight (CD).
+- What would you be missing?
+
+* Next steps after CI
+
+All great things have small beginnings ~ Peter Senge
+
+Start Continuous deployment then go into automating everything!
+Including but not limited to: Continuous Deployment!
+
+* Sources
+- [[https://bitrise.io]]
+- [[https://www.buddybuild.com]]
+- [[https://jenkins.io/]]
+- [[https://circleci.com/]]
+- [[https://nevercode.io/]]
+- [[https://fastlane.tools/]]
+- [[https://travis-ci.org/]]
+- [[https://medium.com/xcblog/xcode9-xcode-server-comprehensive-ios-continuous-integration-3613a7973b48]]
+- [[https://xcloud.me/]]
+- [[https://xcloud.me/]]
